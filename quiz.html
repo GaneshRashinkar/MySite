@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyCareers || Quiz</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/utilities.css" />
+    <link rel="stylesheet" href="/CSS/link.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="quizNav">
+      <h1>The Multiple Intelligence Quiz</h1>
+      <br />
+      <span
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1.2rem;
+        "
+      >
+        For each of the statement below choose the number between 1 and 5 to
+        rate how the describes you
+      </span>
+      <div class="optionsOfQuiz">
+        <span>1) No, the statement is not at all like me.</span>
+        <span>2) The statement is little like me.</span>
+        <span>3) The statement is somewhat like me.</span><br />
+        <span>4) The statement is a lot like me.</span>
+        <span>5) Yes, the statement is definitely me.</span>
+      </div>
+    </div>
+    <div class="quizContainer">
+      <div id="quizQuestion">
+        I can use lots of different words to express myself.
+      </div>
+      <div class="options">
+        <div>
+          <input type="radio" name="options" class="optionNumbers" id="opt1" />
+          <label for="opt1"> 1 </label>
+        </div>
+        <div>
+          <input type="radio" name="options" class="optionNumbers" id="opt2" />
+          <label for="opt2"> 2 </label>
+        </div>
+        <div>
+          <input type="radio" name="options" class="optionNumbers" id="opt3" />
+          <label for="opt3"> 3 </label>
+        </div>
+        <div>
+          <input type="radio" name="options" class="optionNumbers" id="opt4" />
+          <label for="opt4"> 4 </label>
+        </div>
+        <div>
+          <input type="radio" name="options" class="optionNumbers" id="opt5" />
+          <label for="opt5"> 5 </label>
+        </div>
+      </div>
+      <button class="_50BgChange" id="quizNext" onclick="GoToNextQues()">
+        Next
+      </button>
+    </div>
+  </body>
+  <script>
+    let quizQuestionContainer = document.getElementById("quizQuestion");
+    let optionNumbers = document.getElementsByName("options");
+    let quizQuestion = [
+      `I can use lots of different words to express myself.`,
+      `I feel comfortable working with language and words.`,
+      `I enjoy crosswords and other word games  like Scrabble`,
+      `I tend to remember things exactly as they are said to me.`,
+      `I enjoy participating in debates and/or discussions.`,
+      `I find it easy to explain things to others.`,
+      `I enjoy keeping a written journal and/or writting stories and articles`,
+      `I like to read a lot`,
+    ];
+    console.log(optionNumbers);
+    function GoToNextQues() {
+      console.log("Hey");
+      for (
+        let optionNumbersCount = 0;
+        optionNumbersCount < optionNumbers.length;
+        optionNumbersCount++
+      ) {
+        if (optionNumbers[optionNumbersCount].checked) {
+          confirm(
+            "Are you sure want to submit your responce, This will not be changed/edited later!"
+          );
+        } else {
+          // if()
+          alert("Please choose any one of the option");
+          break;
+        }
+      }
+    }
+  </script>
+</html>
